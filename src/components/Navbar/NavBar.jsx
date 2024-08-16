@@ -1,10 +1,13 @@
-import { Navbar, NavbarBrand, NavbarContent, Link, Button, DropdownItem, Dropdown, DropdownTrigger, Avatar, DropdownMenu } from "@nextui-org/react";
+import { Navbar, NavbarBrand, NavbarContent, Button, DropdownItem, Dropdown, DropdownTrigger, Avatar, DropdownMenu } from "@nextui-org/react";
+import { Link } from "react-router-dom";
+
 
 const NavBar = () => {
+    const user = false;
 
     return (
         <Navbar >
-            
+
             <NavbarContent>
                 <NavbarBrand>
 
@@ -13,16 +16,22 @@ const NavBar = () => {
             </NavbarContent>
 
 
+            {!user && <>
+                <NavbarContent className=" relative mt-2 md:mt-3 ml-2 md:ml-[85px] lg:ml-32">
+                    <Link to="/login">
+                        <Button color="success" href="#" variant="flat">
+                            Log In
+                        </Button>
+                    </Link>
 
-            <NavbarContent className=" relative mt-2 md:mt-3 ml-2 md:ml-[85px] lg:ml-32">
-                <Button as={Link} color="success" href="#" variant="flat">
-                    Log In
-                </Button>
+                    <Link to="/signUp">
+                        <Button color="primary" href="#" variant="flat" className=" md:ml-4">
+                            Sign Up
+                        </Button>
+                    </Link>
+                </NavbarContent>
+            </>}
 
-                <Button as={Link} color="primary" href="#" variant="flat" className=" md:ml-4">
-                    Sign Up
-                </Button>
-            </NavbarContent>
 
             <NavbarContent as="div" justify="end">
                 <Dropdown placement="bottom-end">
