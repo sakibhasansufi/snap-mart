@@ -14,12 +14,12 @@ const NavBar = () => {
 
 
 
-            <NavbarContent className=" relative mt-2 md:mt-3 ml-16 md:ml-[85px] lg:ml-32">
+            <NavbarContent className=" relative mt-2 md:mt-3 ml-2 md:ml-[85px] lg:ml-32">
                 <Button as={Link} color="success" href="#" variant="flat">
                     Log In
                 </Button>
 
-                <Button as={Link} color="primary" href="#" variant="flat" className="md:ml-4">
+                <Button as={Link} color="primary" href="#" variant="flat" className=" md:ml-4">
                     Sign Up
                 </Button>
             </NavbarContent>

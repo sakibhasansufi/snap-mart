@@ -9,6 +9,8 @@ import Root from './layouts/Root';
 import ErrorPage from "./components/ErrorPage/ErrorPage";
 import Home from "./components/Home/Home"
 import { NextUIProvider } from '@nextui-org/react';
+import Login from './components/Login/Login';
+import SignUp from './components/SignUp/SignUp';
 
 
 const router = createBrowserRouter([
@@ -20,7 +22,16 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>
-      }
+      },
+      {
+        path : "/login",
+        element: <Login></Login>
+      },
+      {
+        path : "/signUp",
+        element: <SignUp></SignUp>
+      },
+
     ]
   },
 ]);
