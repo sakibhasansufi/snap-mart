@@ -1,16 +1,18 @@
 import { Navbar, NavbarBrand, NavbarContent, Button, DropdownItem, Dropdown, DropdownTrigger, Avatar, DropdownMenu } from "@nextui-org/react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../Provider/AuthProvider";
 
 
 const NavBar = () => {
-    const user = false;
+    const {logOut,user} = useContext(AuthContext);
+
 
     return (
         <Navbar >
 
             <NavbarContent>
                 <NavbarBrand>
-
                     <p className="font-bold text-inherit">ACME</p>
                 </NavbarBrand>
             </NavbarContent>
@@ -50,7 +52,7 @@ const NavBar = () => {
 
                     <DropdownMenu aria-label="Profile Actions" variant="flat">
 
-                        <DropdownItem key="logout" color="danger">
+                        <DropdownItem key="logout" color="danger" onClick={logOut}>
                             Log Out
                         </DropdownItem>
                     </DropdownMenu>
