@@ -11,6 +11,7 @@ import Home from "./components/Home/Home"
 import { NextUIProvider } from '@nextui-org/react';
 import Login from './components/Login/Login';
 import SignUp from './components/SignUp/SignUp';
+import AuthProvider from './components/Provider/AuthProvider';
 
 
 const router = createBrowserRouter([
@@ -24,11 +25,11 @@ const router = createBrowserRouter([
         element: <Home></Home>
       },
       {
-        path : "/login",
+        path: "/login",
         element: <Login></Login>
       },
       {
-        path : "/signUp",
+        path: "/signUp",
         element: <SignUp></SignUp>
       },
 
@@ -39,7 +40,9 @@ const router = createBrowserRouter([
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <NextUIProvider>
-      <RouterProvider router={router} />
+      <AuthProvider>
+        <RouterProvider router={router} />
+      </AuthProvider>
     </NextUIProvider>
   </StrictMode>,
 )
