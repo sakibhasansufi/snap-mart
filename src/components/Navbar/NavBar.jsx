@@ -9,7 +9,7 @@ const NavBar = () => {
 
 
     return (
-        <Navbar >
+        <Navbar className="max-w-7xl mx-auto">
 
             <NavbarContent>
                 <NavbarBrand>
